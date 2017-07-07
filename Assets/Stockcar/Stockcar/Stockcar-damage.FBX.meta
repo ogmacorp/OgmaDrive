@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: eb229d826a945a14892256b779587b6c
+labels:
+- nascar
+- stockcar
+- race
+- car
+- racecar
+- damage
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Body_damage_BK
+    100002: Body_damage_FT
+    100004: Body_damage_LF
+    100006: Body_damage_LR
+    100008: Body_damage_LS
+    100010: Body_damage_RF
+    100012: Body_damage_RR
+    100014: Body_damage_RS
+    100016: //RootNode
+    400000: Body_damage_BK
+    400002: Body_damage_FT
+    400004: Body_damage_LF
+    400006: Body_damage_LR
+    400008: Body_damage_LS
+    400010: Body_damage_RF
+    400012: Body_damage_RR
+    400014: Body_damage_RS
+    400016: //RootNode
+    2300000: Body_damage_BK
+    2300002: Body_damage_FT
+    2300004: Body_damage_LF
+    2300006: Body_damage_LR
+    2300008: Body_damage_LS
+    2300010: Body_damage_RF
+    2300012: Body_damage_RR
+    2300014: Body_damage_RS
+    3300000: Body_damage_BK
+    3300002: Body_damage_FT
+    3300004: Body_damage_LF
+    3300006: Body_damage_LR
+    3300008: Body_damage_LS
+    3300010: Body_damage_RF
+    3300012: Body_damage_RR
+    3300014: Body_damage_RS
+    4300000: Body_damage_RS
+    4300002: Body_damage_FT
+    4300004: Body_damage_LF
+    4300006: Body_damage_LR
+    4300008: Body_damage_RR
+    4300010: Body_damage_BK
+    4300012: Body_damage_RF
+    4300014: Body_damage_LS
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
