@@ -152,20 +152,4 @@ public class ConvolutionFilter {
             };
         }
     }
-    public static float[,] GaussianBlurWeights(float sigma)
-    {
-        const int kernelRadius = 5;
-        float sigmaSqr = sigma * sigma;
-        float scale = 1.0f / (2.0f * Mathf.PI * sigmaSqr);
-        float[,] weights = new float[kernelRadius, kernelRadius];
-
-        for (int y = -kernelRadius / 2; y <= kernelRadius / 2; y++)
-            for (int x = -kernelRadius / 2; x <= kernelRadius / 2; x++)
-            {
-                weights[x + kernelRadius / 2, y + kernelRadius / 2] =
-                    scale * Mathf.Exp(-1.0f * (((x * x) + (y * y)) / sigmaSqr));
-            }
-
-        return weights;
-    }
 }

@@ -30,7 +30,7 @@ The [EOgmaNeo](https://github.com/ogmacorp/EOgmaNeo/) version has been optimized
 " target="_blank"><img src="http://img.youtube.com/vi/0ibVhtuQkZA/0.jpg" 
 alt="Self Driving Car Learns Online and On-board on Raspberry Pi 3" width="480" height="360" border="1"/></a>
 
-A third Unity scene, `Assets/OgmaDrive.unity`, is used as a main menu to allow choice of implementation when packaged and used with a Unity player as a standalone application. The standalone pre-built version of OgmaDrive for Windows and Mac OSX can be downloaded from the [Github repo](https://github.com/ogmacorp/OgmaDrive/releases).
+A third Unity scene, `Assets/OgmaDrive.unity`, is used as a main menu to allow a choice of implementation when packaged and used with a Unity player as a standalone application. The standalone pre-built version of OgmaDrive for Windows and Mac OSX can be downloaded from this [Github repo](https://github.com/ogmacorp/OgmaDriveApp/releases).
 
 ## Implementation details
 
