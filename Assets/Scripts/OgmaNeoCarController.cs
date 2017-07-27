@@ -31,6 +31,9 @@ public class OgmaNeoCarController : MonoBehaviour {
     [Tooltip("Distance to look ahead when spline following (for training)")]
     public float SteerAhead = 4.0f;
 
+    [Tooltip("Number of initial training only laps")]
+    public int initialTrainingLaps = 2;
+
     [Header("Serialization")]
     [Tooltip("Reload a saved hierarchy")]
     public bool reloadHierarchy = false;
@@ -410,7 +413,7 @@ public class OgmaNeoCarController : MonoBehaviour {
                 Training = true;
 
             // Toggle training off iff quite confident?
-            if (Training == true && NCC > 0.85f && LapCount >= 1)
+            if (Training == true && NCC > 0.85f && LapCount >= initialTrainingLaps)
                 Training = false;
 
             if (carController.CurrentSpeed < 2.0f)

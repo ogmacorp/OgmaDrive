@@ -150,32 +150,32 @@ public class LayerDesc : global::System.IDisposable {
     } 
   }
 
+  public float _traceCutoff {
+    set {
+      eogmaneoPINVOKE.LayerDesc__traceCutoff_set(swigCPtr, value);
+    } 
+    get {
+      float ret = eogmaneoPINVOKE.LayerDesc__traceCutoff_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public float _advScalar {
+    set {
+      eogmaneoPINVOKE.LayerDesc__advScalar_set(swigCPtr, value);
+    } 
+    get {
+      float ret = eogmaneoPINVOKE.LayerDesc__advScalar_get(swigCPtr);
+      return ret;
+    } 
+  }
+
   public float _epsilon {
     set {
       eogmaneoPINVOKE.LayerDesc__epsilon_set(swigCPtr, value);
     } 
     get {
       float ret = eogmaneoPINVOKE.LayerDesc__epsilon_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int _maxReplaySamples {
-    set {
-      eogmaneoPINVOKE.LayerDesc__maxReplaySamples_set(swigCPtr, value);
-    } 
-    get {
-      int ret = eogmaneoPINVOKE.LayerDesc__maxReplaySamples_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int _replayIter {
-    set {
-      eogmaneoPINVOKE.LayerDesc__replayIter_set(swigCPtr, value);
-    } 
-    get {
-      int ret = eogmaneoPINVOKE.LayerDesc__replayIter_get(swigCPtr);
       return ret;
     } 
   }

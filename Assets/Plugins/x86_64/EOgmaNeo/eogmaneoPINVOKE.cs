@@ -761,45 +761,6 @@ class eogmaneoPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_delete_VisibleLayerDesc")]
   public static extern void delete_VisibleLayerDesc(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_ReplaySample__predictionsPrev_set")]
-  public static extern void ReplaySample__predictionsPrev_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_ReplaySample__predictionsPrev_get")]
-  public static extern global::System.IntPtr ReplaySample__predictionsPrev_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_ReplaySample__feedBackPrev_set")]
-  public static extern void ReplaySample__feedBackPrev_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_ReplaySample__feedBackPrev_get")]
-  public static extern global::System.IntPtr ReplaySample__feedBackPrev_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_ReplaySample__reward_set")]
-  public static extern void ReplaySample__reward_set(global::System.Runtime.InteropServices.HandleRef jarg1, float jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_ReplaySample__reward_get")]
-  public static extern float ReplaySample__reward_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_new_ReplaySample")]
-  public static extern global::System.IntPtr new_ReplaySample();
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_delete_ReplaySample")]
-  public static extern void delete_ReplaySample(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_Layer__maxReplaySamples_set")]
-  public static extern void Layer__maxReplaySamples_set(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_Layer__maxReplaySamples_get")]
-  public static extern int Layer__maxReplaySamples_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_Layer__replayIter_set")]
-  public static extern void Layer__replayIter_set(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_Layer__replayIter_get")]
-  public static extern int Layer__replayIter_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_new_Layer")]
-  public static extern global::System.IntPtr new_Layer();
-
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_Layer_create")]
   public static extern void Layer_create(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4, bool jarg5, global::System.Runtime.InteropServices.HandleRef jarg6, uint jarg7);
 
@@ -807,7 +768,7 @@ class eogmaneoPINVOKE {
   public static extern void Layer_forward(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, float jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_Layer_backward")]
-  public static extern void Layer_backward(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, float jarg4, float jarg5, float jarg6, float jarg7, float jarg8);
+  public static extern void Layer_backward(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, float jarg4, float jarg5, float jarg6, float jarg7, float jarg8, float jarg9, float jarg10);
 
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_Layer_getHiddenWidth")]
   public static extern int Layer_getHiddenWidth(global::System.Runtime.InteropServices.HandleRef jarg1);
@@ -856,6 +817,9 @@ class eogmaneoPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_Layer_getFeedBackWeights")]
   public static extern global::System.IntPtr Layer_getFeedBackWeights(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4, int jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_new_Layer")]
+  public static extern global::System.IntPtr new_Layer();
 
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_delete_Layer")]
   public static extern void delete_Layer(global::System.Runtime.InteropServices.HandleRef jarg1);
@@ -926,23 +890,23 @@ class eogmaneoPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__gamma_get")]
   public static extern float LayerDesc__gamma_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__traceCutoff_set")]
+  public static extern void LayerDesc__traceCutoff_set(global::System.Runtime.InteropServices.HandleRef jarg1, float jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__traceCutoff_get")]
+  public static extern float LayerDesc__traceCutoff_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__advScalar_set")]
+  public static extern void LayerDesc__advScalar_set(global::System.Runtime.InteropServices.HandleRef jarg1, float jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__advScalar_get")]
+  public static extern float LayerDesc__advScalar_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__epsilon_set")]
   public static extern void LayerDesc__epsilon_set(global::System.Runtime.InteropServices.HandleRef jarg1, float jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__epsilon_get")]
   public static extern float LayerDesc__epsilon_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__maxReplaySamples_set")]
-  public static extern void LayerDesc__maxReplaySamples_set(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__maxReplaySamples_get")]
-  public static extern int LayerDesc__maxReplaySamples_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__replayIter_set")]
-  public static extern void LayerDesc__replayIter_set(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_LayerDesc__replayIter_get")]
-  public static extern int LayerDesc__replayIter_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_new_LayerDesc")]
   public static extern global::System.IntPtr new_LayerDesc();
@@ -1606,6 +1570,15 @@ class eogmaneoPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_OpenCVInterop_LineSegmentDetector__SWIG_1")]
   public static extern void OpenCVInterop_LineSegmentDetector__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, int jarg4, int jarg5, global::System.Runtime.InteropServices.HandleRef jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_OpenCVInterop_FastFeatureDetector__SWIG_0")]
+  public static extern void OpenCVInterop_FastFeatureDetector__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, int jarg4, int jarg5, global::System.Runtime.InteropServices.HandleRef jarg6, bool jarg7, int jarg8, int jarg9, bool jarg10);
+
+  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_OpenCVInterop_FastFeatureDetector__SWIG_1")]
+  public static extern void OpenCVInterop_FastFeatureDetector__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, int jarg4, int jarg5, global::System.Runtime.InteropServices.HandleRef jarg6, bool jarg7, int jarg8, int jarg9);
+
+  [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_OpenCVInterop_FastFeatureDetector__SWIG_2")]
+  public static extern void OpenCVInterop_FastFeatureDetector__SWIG_2(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, int jarg4, int jarg5, global::System.Runtime.InteropServices.HandleRef jarg6, bool jarg7, int jarg8);
 
   [global::System.Runtime.InteropServices.DllImport("CsEOgmaNeo", EntryPoint="CSharp_eogmaneo_new_OpenCVInterop")]
   public static extern global::System.IntPtr new_OpenCVInterop();
