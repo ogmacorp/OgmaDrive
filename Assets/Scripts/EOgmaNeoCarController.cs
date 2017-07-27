@@ -70,7 +70,7 @@ public class EOgmaNeoCarController : MonoBehaviour {
     private float carAccel;
     private float carBrake;
 
-    private eogmaneo.System _system = null;
+    private eogmaneo.ComputeSystem _system = null;
     private eogmaneo.Hierarchy _hierarchy = null;
 
     private int _inputWidth, _inputHeight;
@@ -79,7 +79,6 @@ public class EOgmaNeoCarController : MonoBehaviour {
     private eogmaneo.StdVeci _rotationSDR = null;
     private eogmaneo.StdVeci _inputValues = null;
 
-    private float[,] _customBlurWeights = null;
     private eogmaneo.OpenCVInterop _openCV = null;
 
     // Size of SDR history buffer
@@ -114,7 +113,7 @@ public class EOgmaNeoCarController : MonoBehaviour {
 
         print("Initializing EOgmaNeo");
 
-        _system = new eogmaneo.System(4, 1111);
+        _system = new eogmaneo.ComputeSystem(4, 1111);
 
         _inputWidth = cameraTexture.width;
         _inputHeight = cameraTexture.height;
@@ -195,7 +194,6 @@ public class EOgmaNeoCarController : MonoBehaviour {
             _neoVis.create(_hierarchy, neoVisPort);
         }
 
-        _customBlurWeights = ConvolutionFilter.GaussianBlurWeights(0.84089642f);
         _openCV = new eogmaneo.OpenCVInterop();
 
         int numSDRbits = (_hiddenWidth / inputChunkSizes[0]) * (_hiddenHeight / inputChunkSizes[1]);
@@ -295,8 +293,7 @@ public class EOgmaNeoCarController : MonoBehaviour {
         // Blur entire camera image?
         if (useBlur)
         {
-            //Texture2D blurredTexture = ConvolutionFilter.Apply(predictionTexture, ConvolutionFilter.GaussianBlur);
-            Texture2D blurredTexture = ConvolutionFilter.Apply(predictionTexture, _customBlurWeights);
+            Texture2D blurredTexture = ConvolutionFilter.Apply(predictionTexture, ConvolutionFilter.GaussianBlur);
             predictionTexture.SetPixels(blurredTexture.GetPixels());
         }
 
