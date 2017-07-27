@@ -31,6 +31,9 @@ public class EOgmaNeoCarController : MonoBehaviour {
     [Tooltip("Distance to look ahead when spline following (for training)")]
     public float SteerAhead = 4.0f;
 
+    [Tooltip("Number of initial training only laps")]
+    public int initialTrainingLaps = 2;
+
     [Header("Serialization")]
     [Tooltip("Reload a saved hierarchy")]
     public bool reloadHierarchy = false;
@@ -137,7 +140,7 @@ public class EOgmaNeoCarController : MonoBehaviour {
 
         // Hierarchy layer descriptions
         const int layerSize = 36;
-        const int numLayers = 4;
+        const int numLayers = 3;
 
         StdVecLayerDesc lds = new StdVecLayerDesc(numLayers);
 
@@ -151,15 +154,11 @@ public class EOgmaNeoCarController : MonoBehaviour {
             lds[l]._backwardRadius = 9;
             lds[l]._ticksPerUpdate = 2;
             lds[l]._temporalHorizon = 2;
-            lds[l]._alpha = 0.04f;
-            lds[l]._beta = 0.16f;
+            lds[l]._alpha = 0.065f;
+            lds[l]._beta = 0.1f;
 
             // Disable reinforcement learning
             lds[l]._delta = 0.0f;
-            //lds[i]._gamma = 0.0f;
-            //lds[l]._epsilon = 0.0f;
-            //lds[l]._maxReplaySamples = 0;
-            //lds[l]._replayIter = 0.0f;
         }
 
         // Encoder output sizes, as input sizes to hierarchy
@@ -289,6 +288,8 @@ public class EOgmaNeoCarController : MonoBehaviour {
         bool useBlur = false && !useCanny;   // Canny already includes Gaussian blurring
         bool useThreholding = false;
         bool useGaborFilter = false;
+        bool useLineSegmentDetector = true;
+        bool useFastFeatureDetector = !useLineSegmentDetector;
 
         // Blur entire camera image?
         if (useBlur)
@@ -433,30 +434,62 @@ public class EOgmaNeoCarController : MonoBehaviour {
             predictionTexture.Apply();
         }
 
-        // Pass filtered image into the Line Segment Detector (optionally drawing found lines),
-        // and construct the rotation SDR for passing into the hierarchy
-        bool drawLines = true;
-        _openCV.LineSegmentDetector(_inputField, _hiddenWidth, _hiddenHeight, 6, _rotationSDR, drawLines);
-
-        if (drawLines)
+        if (useLineSegmentDetector)
         {
-            // With drawLines enabled, the _inputField gets overriden with black background
-            // pixels and detected white lines drawn ontop.
+            // Pass filtered image into the Line Segment Detector (optionally drawing found lines),
+            // and construct the rotation SDR for passing into the hierarchy
+            bool drawLines = true;
+            _openCV.LineSegmentDetector(_inputField, _hiddenWidth, _hiddenHeight, 6, _rotationSDR, drawLines);
 
-            // Transfer back into the predictionTexture for display (top half, bottom will show SDRs)
-            Color tempPixel = new Color(0.0f, 0.0f, 0.0f);
-            for (int y = yOffset; y < yOffset + yHeight; y++)
+            if (drawLines)
             {
-                for (int x = 0; x < _hiddenWidth; x++)
+                // With drawLines enabled, the _inputField gets overriden with black background
+                // pixels and detected white lines drawn ontop.
+
+                // Transfer back into the predictionTexture for display (top half, bottom will show SDRs)
+                Color tempPixel = new Color(0.0f, 0.0f, 0.0f);
+                for (int y = yOffset; y < yOffset + yHeight; y++)
                 {
-                    pixelPos = ((y - yOffset) * _hiddenWidth) + x;
-                    tempPixel.r = _inputField[pixelPos];
-                    tempPixel.g = tempPixel.r;
-                    tempPixel.b = tempPixel.r;
-                    predictionTexture.SetPixel(x, (y - yOffset) + _hiddenHeight, tempPixel);
+                    for (int x = 0; x < _hiddenWidth; x++)
+                    {
+                        pixelPos = ((y - yOffset) * _hiddenWidth) + x;
+                        tempPixel.r = _inputField[pixelPos];
+                        tempPixel.g = tempPixel.r;
+                        tempPixel.b = tempPixel.r;
+                        predictionTexture.SetPixel(x, (y - yOffset) + _hiddenHeight, tempPixel);
+                    }
                 }
+                predictionTexture.Apply();
             }
-            predictionTexture.Apply();
+        }
+
+        if (useFastFeatureDetector)
+        {
+            // Pass filtered image into the FAST Feature Detector (optionally drawing points found),
+            // and construct the feature SDR for passing into the hierarchy
+            bool drawPoints = true;
+            _openCV.FastFeatureDetector(_inputField, _hiddenWidth, _hiddenHeight, 6, _rotationSDR, drawPoints, 0, 1, true);
+
+            if (drawPoints)
+            {
+                // With drawPoints enabled, the _inputField gets overriden with black background
+                // pixels and detected white points drawn ontop.
+
+                // Transfer back into the predictionTexture for display (top half, bottom will show SDRs)
+                Color tempPixel = new Color(0.0f, 0.0f, 0.0f);
+                for (int y = yOffset; y < yOffset + yHeight; y++)
+                {
+                    for (int x = 0; x < _hiddenWidth; x++)
+                    {
+                        pixelPos = ((y - yOffset) * _hiddenWidth) + x;
+                        tempPixel.r = _inputField[pixelPos];
+                        tempPixel.g = tempPixel.r;
+                        tempPixel.b = tempPixel.r;
+                        predictionTexture.SetPixel(x, (y - yOffset) + _hiddenHeight, tempPixel);
+                    }
+                }
+                predictionTexture.Apply();
+            }
         }
 
         Color predictedPixel = new Color();
@@ -647,7 +680,7 @@ public class EOgmaNeoCarController : MonoBehaviour {
                 Training = true;
 
             // Toggle training off iff quite confident?
-            if (Training == true && NCC > 0.85f && LapCount >= 1)
+            if (Training == true && NCC > 0.85f && LapCount >= initialTrainingLaps)
                 Training = false;
 
             if (carController.CurrentSpeed < 2.0f)

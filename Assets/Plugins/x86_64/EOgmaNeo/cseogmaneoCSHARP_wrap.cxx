@@ -4209,144 +4209,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_delete_VisibleLayerDesc(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_ReplaySample__predictionsPrev_set(void * jarg1, void * jarg2) {
-  eogmaneo::ReplaySample *arg1 = (eogmaneo::ReplaySample *) 0 ;
-  std::vector< std::vector< int > > *arg2 = (std::vector< std::vector< int > > *) 0 ;
-  
-  arg1 = (eogmaneo::ReplaySample *)jarg1; 
-  arg2 = (std::vector< std::vector< int > > *)jarg2; 
-  if (arg1) (arg1)->_predictionsPrev = *arg2;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_eogmaneo_ReplaySample__predictionsPrev_get(void * jarg1) {
-  void * jresult ;
-  eogmaneo::ReplaySample *arg1 = (eogmaneo::ReplaySample *) 0 ;
-  std::vector< std::vector< int > > *result = 0 ;
-  
-  arg1 = (eogmaneo::ReplaySample *)jarg1; 
-  result = (std::vector< std::vector< int > > *)& ((arg1)->_predictionsPrev);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_ReplaySample__feedBackPrev_set(void * jarg1, void * jarg2) {
-  eogmaneo::ReplaySample *arg1 = (eogmaneo::ReplaySample *) 0 ;
-  std::vector< std::vector< int > > *arg2 = (std::vector< std::vector< int > > *) 0 ;
-  
-  arg1 = (eogmaneo::ReplaySample *)jarg1; 
-  arg2 = (std::vector< std::vector< int > > *)jarg2; 
-  if (arg1) (arg1)->_feedBackPrev = *arg2;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_eogmaneo_ReplaySample__feedBackPrev_get(void * jarg1) {
-  void * jresult ;
-  eogmaneo::ReplaySample *arg1 = (eogmaneo::ReplaySample *) 0 ;
-  std::vector< std::vector< int > > *result = 0 ;
-  
-  arg1 = (eogmaneo::ReplaySample *)jarg1; 
-  result = (std::vector< std::vector< int > > *)& ((arg1)->_feedBackPrev);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_ReplaySample__reward_set(void * jarg1, float jarg2) {
-  eogmaneo::ReplaySample *arg1 = (eogmaneo::ReplaySample *) 0 ;
-  float arg2 ;
-  
-  arg1 = (eogmaneo::ReplaySample *)jarg1; 
-  arg2 = (float)jarg2; 
-  if (arg1) (arg1)->_reward = arg2;
-}
-
-
-SWIGEXPORT float SWIGSTDCALL CSharp_eogmaneo_ReplaySample__reward_get(void * jarg1) {
-  float jresult ;
-  eogmaneo::ReplaySample *arg1 = (eogmaneo::ReplaySample *) 0 ;
-  float result;
-  
-  arg1 = (eogmaneo::ReplaySample *)jarg1; 
-  result = (float) ((arg1)->_reward);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_eogmaneo_new_ReplaySample() {
-  void * jresult ;
-  eogmaneo::ReplaySample *result = 0 ;
-  
-  result = (eogmaneo::ReplaySample *)new eogmaneo::ReplaySample();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_delete_ReplaySample(void * jarg1) {
-  eogmaneo::ReplaySample *arg1 = (eogmaneo::ReplaySample *) 0 ;
-  
-  arg1 = (eogmaneo::ReplaySample *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_Layer__maxReplaySamples_set(void * jarg1, int jarg2) {
-  eogmaneo::Layer *arg1 = (eogmaneo::Layer *) 0 ;
-  int arg2 ;
-  
-  arg1 = (eogmaneo::Layer *)jarg1; 
-  arg2 = (int)jarg2; 
-  if (arg1) (arg1)->_maxReplaySamples = arg2;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_eogmaneo_Layer__maxReplaySamples_get(void * jarg1) {
-  int jresult ;
-  eogmaneo::Layer *arg1 = (eogmaneo::Layer *) 0 ;
-  int result;
-  
-  arg1 = (eogmaneo::Layer *)jarg1; 
-  result = (int) ((arg1)->_maxReplaySamples);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_Layer__replayIter_set(void * jarg1, int jarg2) {
-  eogmaneo::Layer *arg1 = (eogmaneo::Layer *) 0 ;
-  int arg2 ;
-  
-  arg1 = (eogmaneo::Layer *)jarg1; 
-  arg2 = (int)jarg2; 
-  if (arg1) (arg1)->_replayIter = arg2;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_eogmaneo_Layer__replayIter_get(void * jarg1) {
-  int jresult ;
-  eogmaneo::Layer *arg1 = (eogmaneo::Layer *) 0 ;
-  int result;
-  
-  arg1 = (eogmaneo::Layer *)jarg1; 
-  result = (int) ((arg1)->_replayIter);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_eogmaneo_new_Layer() {
-  void * jresult ;
-  eogmaneo::Layer *result = 0 ;
-  
-  result = (eogmaneo::Layer *)new eogmaneo::Layer();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_Layer_create(void * jarg1, int jarg2, int jarg3, int jarg4, unsigned int jarg5, void * jarg6, unsigned long jarg7) {
   eogmaneo::Layer *arg1 = (eogmaneo::Layer *) 0 ;
   int arg2 ;
@@ -4393,7 +4255,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_Layer_forward(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_Layer_backward(void * jarg1, void * jarg2, void * jarg3, float jarg4, float jarg5, float jarg6, float jarg7, float jarg8) {
+SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_Layer_backward(void * jarg1, void * jarg2, void * jarg3, float jarg4, float jarg5, float jarg6, float jarg7, float jarg8, float jarg9, float jarg10) {
   eogmaneo::Layer *arg1 = (eogmaneo::Layer *) 0 ;
   std::vector< std::vector< int > > *arg2 = 0 ;
   eogmaneo::ComputeSystem *arg3 = 0 ;
@@ -4402,6 +4264,8 @@ SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_Layer_backward(void * jarg1, void * 
   float arg6 ;
   float arg7 ;
   float arg8 ;
+  float arg9 ;
+  float arg10 ;
   
   arg1 = (eogmaneo::Layer *)jarg1; 
   arg2 = (std::vector< std::vector< int > > *)jarg2;
@@ -4419,7 +4283,9 @@ SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_Layer_backward(void * jarg1, void * 
   arg6 = (float)jarg6; 
   arg7 = (float)jarg7; 
   arg8 = (float)jarg8; 
-  (arg1)->backward((std::vector< std::vector< int > > const &)*arg2,*arg3,arg4,arg5,arg6,arg7,arg8);
+  arg9 = (float)jarg9; 
+  arg10 = (float)jarg10; 
+  (arg1)->backward((std::vector< std::vector< int > > const &)*arg2,*arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 }
 
 
@@ -4639,6 +4505,16 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_eogmaneo_Layer_getFeedBackWeights(void * ja
   arg5 = (int)jarg5; 
   result = ((eogmaneo::Layer const *)arg1)->getFeedBackWeights(arg2,arg3,arg4,arg5);
   jresult = new std::vector< float >((const std::vector< float > &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_eogmaneo_new_Layer() {
+  void * jresult ;
+  eogmaneo::Layer *result = 0 ;
+  
+  result = (eogmaneo::Layer *)new eogmaneo::Layer();
+  jresult = (void *)result; 
   return jresult;
 }
 
@@ -4893,6 +4769,50 @@ SWIGEXPORT float SWIGSTDCALL CSharp_eogmaneo_LayerDesc__gamma_get(void * jarg1) 
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_LayerDesc__traceCutoff_set(void * jarg1, float jarg2) {
+  eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
+  float arg2 ;
+  
+  arg1 = (eogmaneo::LayerDesc *)jarg1; 
+  arg2 = (float)jarg2; 
+  if (arg1) (arg1)->_traceCutoff = arg2;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_eogmaneo_LayerDesc__traceCutoff_get(void * jarg1) {
+  float jresult ;
+  eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
+  float result;
+  
+  arg1 = (eogmaneo::LayerDesc *)jarg1; 
+  result = (float) ((arg1)->_traceCutoff);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_LayerDesc__advScalar_set(void * jarg1, float jarg2) {
+  eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
+  float arg2 ;
+  
+  arg1 = (eogmaneo::LayerDesc *)jarg1; 
+  arg2 = (float)jarg2; 
+  if (arg1) (arg1)->_advScalar = arg2;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_eogmaneo_LayerDesc__advScalar_get(void * jarg1) {
+  float jresult ;
+  eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
+  float result;
+  
+  arg1 = (eogmaneo::LayerDesc *)jarg1; 
+  result = (float) ((arg1)->_advScalar);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_LayerDesc__epsilon_set(void * jarg1, float jarg2) {
   eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
   float arg2 ;
@@ -4910,50 +4830,6 @@ SWIGEXPORT float SWIGSTDCALL CSharp_eogmaneo_LayerDesc__epsilon_get(void * jarg1
   
   arg1 = (eogmaneo::LayerDesc *)jarg1; 
   result = (float) ((arg1)->_epsilon);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_LayerDesc__maxReplaySamples_set(void * jarg1, int jarg2) {
-  eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
-  int arg2 ;
-  
-  arg1 = (eogmaneo::LayerDesc *)jarg1; 
-  arg2 = (int)jarg2; 
-  if (arg1) (arg1)->_maxReplaySamples = arg2;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_eogmaneo_LayerDesc__maxReplaySamples_get(void * jarg1) {
-  int jresult ;
-  eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
-  int result;
-  
-  arg1 = (eogmaneo::LayerDesc *)jarg1; 
-  result = (int) ((arg1)->_maxReplaySamples);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_LayerDesc__replayIter_set(void * jarg1, int jarg2) {
-  eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
-  int arg2 ;
-  
-  arg1 = (eogmaneo::LayerDesc *)jarg1; 
-  arg2 = (int)jarg2; 
-  if (arg1) (arg1)->_replayIter = arg2;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_eogmaneo_LayerDesc__replayIter_get(void * jarg1) {
-  int jresult ;
-  eogmaneo::LayerDesc *arg1 = (eogmaneo::LayerDesc *) 0 ;
-  int result;
-  
-  arg1 = (eogmaneo::LayerDesc *)jarg1; 
-  result = (int) ((arg1)->_replayIter);
   jresult = result; 
   return jresult;
 }
@@ -7769,6 +7645,102 @@ SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_OpenCVInterop_LineSegmentDetector__S
     return ;
   } 
   (arg1)->LineSegmentDetector(*arg2,arg3,arg4,arg5,*arg6);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_OpenCVInterop_FastFeatureDetector__SWIG_0(void * jarg1, void * jarg2, int jarg3, int jarg4, int jarg5, void * jarg6, unsigned int jarg7, int jarg8, int jarg9, unsigned int jarg10) {
+  eogmaneo::OpenCVInterop *arg1 = (eogmaneo::OpenCVInterop *) 0 ;
+  std::vector< float > *arg2 = 0 ;
+  int arg3 ;
+  int arg4 ;
+  int arg5 ;
+  std::vector< int > *arg6 = 0 ;
+  bool arg7 ;
+  int arg8 ;
+  int arg9 ;
+  bool arg10 ;
+  
+  arg1 = (eogmaneo::OpenCVInterop *)jarg1; 
+  arg2 = (std::vector< float > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< float > & type is null", 0);
+    return ;
+  } 
+  arg3 = (int)jarg3; 
+  arg4 = (int)jarg4; 
+  arg5 = (int)jarg5; 
+  arg6 = (std::vector< int > *)jarg6;
+  if (!arg6) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > & type is null", 0);
+    return ;
+  } 
+  arg7 = jarg7 ? true : false; 
+  arg8 = (int)jarg8; 
+  arg9 = (int)jarg9; 
+  arg10 = jarg10 ? true : false; 
+  (arg1)->FastFeatureDetector(*arg2,arg3,arg4,arg5,*arg6,arg7,arg8,arg9,arg10);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_OpenCVInterop_FastFeatureDetector__SWIG_1(void * jarg1, void * jarg2, int jarg3, int jarg4, int jarg5, void * jarg6, unsigned int jarg7, int jarg8, int jarg9) {
+  eogmaneo::OpenCVInterop *arg1 = (eogmaneo::OpenCVInterop *) 0 ;
+  std::vector< float > *arg2 = 0 ;
+  int arg3 ;
+  int arg4 ;
+  int arg5 ;
+  std::vector< int > *arg6 = 0 ;
+  bool arg7 ;
+  int arg8 ;
+  int arg9 ;
+  
+  arg1 = (eogmaneo::OpenCVInterop *)jarg1; 
+  arg2 = (std::vector< float > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< float > & type is null", 0);
+    return ;
+  } 
+  arg3 = (int)jarg3; 
+  arg4 = (int)jarg4; 
+  arg5 = (int)jarg5; 
+  arg6 = (std::vector< int > *)jarg6;
+  if (!arg6) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > & type is null", 0);
+    return ;
+  } 
+  arg7 = jarg7 ? true : false; 
+  arg8 = (int)jarg8; 
+  arg9 = (int)jarg9; 
+  (arg1)->FastFeatureDetector(*arg2,arg3,arg4,arg5,*arg6,arg7,arg8,arg9);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_eogmaneo_OpenCVInterop_FastFeatureDetector__SWIG_2(void * jarg1, void * jarg2, int jarg3, int jarg4, int jarg5, void * jarg6, unsigned int jarg7, int jarg8) {
+  eogmaneo::OpenCVInterop *arg1 = (eogmaneo::OpenCVInterop *) 0 ;
+  std::vector< float > *arg2 = 0 ;
+  int arg3 ;
+  int arg4 ;
+  int arg5 ;
+  std::vector< int > *arg6 = 0 ;
+  bool arg7 ;
+  int arg8 ;
+  
+  arg1 = (eogmaneo::OpenCVInterop *)jarg1; 
+  arg2 = (std::vector< float > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< float > & type is null", 0);
+    return ;
+  } 
+  arg3 = (int)jarg3; 
+  arg4 = (int)jarg4; 
+  arg5 = (int)jarg5; 
+  arg6 = (std::vector< int > *)jarg6;
+  if (!arg6) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > & type is null", 0);
+    return ;
+  } 
+  arg7 = jarg7 ? true : false; 
+  arg8 = (int)jarg8; 
+  (arg1)->FastFeatureDetector(*arg2,arg3,arg4,arg5,*arg6,arg7,arg8);
 }
 
 

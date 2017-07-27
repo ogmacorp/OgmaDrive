@@ -86,6 +86,21 @@ public class OpenCVInterop : global::System.IDisposable {
     if (eogmaneoPINVOKE.SWIGPendingException.Pending) throw eogmaneoPINVOKE.SWIGPendingException.Retrieve();
   }
 
+  public void FastFeatureDetector(StdVecf data, int width, int height, int chunkSize, StdVeci featuresSDR, bool drawKeypoints, int threshold, int type, bool nonmaxSuppression) {
+    eogmaneoPINVOKE.OpenCVInterop_FastFeatureDetector__SWIG_0(swigCPtr, StdVecf.getCPtr(data), width, height, chunkSize, StdVeci.getCPtr(featuresSDR), drawKeypoints, threshold, type, nonmaxSuppression);
+    if (eogmaneoPINVOKE.SWIGPendingException.Pending) throw eogmaneoPINVOKE.SWIGPendingException.Retrieve();
+  }
+
+  public void FastFeatureDetector(StdVecf data, int width, int height, int chunkSize, StdVeci featuresSDR, bool drawKeypoints, int threshold, int type) {
+    eogmaneoPINVOKE.OpenCVInterop_FastFeatureDetector__SWIG_1(swigCPtr, StdVecf.getCPtr(data), width, height, chunkSize, StdVeci.getCPtr(featuresSDR), drawKeypoints, threshold, type);
+    if (eogmaneoPINVOKE.SWIGPendingException.Pending) throw eogmaneoPINVOKE.SWIGPendingException.Retrieve();
+  }
+
+  public void FastFeatureDetector(StdVecf data, int width, int height, int chunkSize, StdVeci featuresSDR, bool drawKeypoints, int threshold) {
+    eogmaneoPINVOKE.OpenCVInterop_FastFeatureDetector__SWIG_2(swigCPtr, StdVecf.getCPtr(data), width, height, chunkSize, StdVeci.getCPtr(featuresSDR), drawKeypoints, threshold);
+    if (eogmaneoPINVOKE.SWIGPendingException.Pending) throw eogmaneoPINVOKE.SWIGPendingException.Retrieve();
+  }
+
   public OpenCVInterop() : this(eogmaneoPINVOKE.new_OpenCVInterop(), true) {
   }
 

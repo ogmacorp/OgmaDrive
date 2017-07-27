@@ -40,29 +40,6 @@ public class Layer : global::System.IDisposable {
     }
   }
 
-  public int _maxReplaySamples {
-    set {
-      eogmaneoPINVOKE.Layer__maxReplaySamples_set(swigCPtr, value);
-    } 
-    get {
-      int ret = eogmaneoPINVOKE.Layer__maxReplaySamples_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int _replayIter {
-    set {
-      eogmaneoPINVOKE.Layer__replayIter_set(swigCPtr, value);
-    } 
-    get {
-      int ret = eogmaneoPINVOKE.Layer__replayIter_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public Layer() : this(eogmaneoPINVOKE.new_Layer(), true) {
-  }
-
   public void create(int hiddenWidth, int hiddenHeight, int chunkSize, bool hasFeedBack, SWIGTYPE_p_std__vectorT_eogmaneo__VisibleLayerDesc_t visibleLayerDescs, uint seed) {
     eogmaneoPINVOKE.Layer_create(swigCPtr, hiddenWidth, hiddenHeight, chunkSize, hasFeedBack, SWIGTYPE_p_std__vectorT_eogmaneo__VisibleLayerDesc_t.getCPtr(visibleLayerDescs), seed);
     if (eogmaneoPINVOKE.SWIGPendingException.Pending) throw eogmaneoPINVOKE.SWIGPendingException.Retrieve();
@@ -73,8 +50,8 @@ public class Layer : global::System.IDisposable {
     if (eogmaneoPINVOKE.SWIGPendingException.Pending) throw eogmaneoPINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public void backward(Std2DVeci feedBack, ComputeSystem system, float reward, float beta, float delta, float gamma, float epsilon) {
-    eogmaneoPINVOKE.Layer_backward(swigCPtr, Std2DVeci.getCPtr(feedBack), ComputeSystem.getCPtr(system), reward, beta, delta, gamma, epsilon);
+  public void backward(Std2DVeci feedBack, ComputeSystem system, float reward, float beta, float delta, float gamma, float traceCutoff, float advScalar, float epsilon) {
+    eogmaneoPINVOKE.Layer_backward(swigCPtr, Std2DVeci.getCPtr(feedBack), ComputeSystem.getCPtr(system), reward, beta, delta, gamma, traceCutoff, advScalar, epsilon);
     if (eogmaneoPINVOKE.SWIGPendingException.Pending) throw eogmaneoPINVOKE.SWIGPendingException.Retrieve();
   }
 
@@ -156,6 +133,9 @@ public class Layer : global::System.IDisposable {
   public StdVecf getFeedBackWeights(int v, int f, int x, int y) {
     StdVecf ret = new StdVecf(eogmaneoPINVOKE.Layer_getFeedBackWeights(swigCPtr, v, f, x, y), true);
     return ret;
+  }
+
+  public Layer() : this(eogmaneoPINVOKE.new_Layer(), true) {
   }
 
 }
