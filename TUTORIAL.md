@@ -36,7 +36,7 @@ Jasper Flick's [Catlike Coding](http://catlikecoding.com/unity/tutorials/) Unity
 
 Adding a new spline requires the creation of a game object using the `Create Empty` GameObject menu options. In the Inspector panel for this new game object the `Add Component` button can then be used to add the `Scripts -> Bezier Spline` script.
 
-The `Add Curve` button is used to append successive Bezier spline sections forming a [composite Bezier curve](https://en.wikipedia.org/wiki/Composite_B%C3%A9zier_curve). <span style="color:white">White</span>, <span style="color:cyan">Blue</span>, and <span style="color:yellow">Yellow</span> anchors allow for movement of control points. Control points can also be tagged with a continuinty mode (curve derivative constraints). Typically this mode is set to `Aligned` for all control points.
+The `Add Curve` button is used to append successive Bezier spline sections forming a [composite Bezier curve](https://en.wikipedia.org/wiki/Composite_B%C3%A9zier_curve). <span style="color:white">White</span>, <span style="color:cyan">Blue</span>, and <span style="color:yellow">Yellow</span> anchors allow for movement of control points. Control points can also be tagged with a continuity mode (curve derivative constraints). Typically this mode is set to `Aligned` for all control points.
 
 The `Loop` toggle is used to form a closed loop of Bezier spline sections. The spline following code, used when training a car, looks ahead of it's current position to determine how to steer and maintain the car's momentum along the current spline it's following. Due to this a closed loop spline **must** be used for track mesh creation and subsequently for spline following by the car.
 

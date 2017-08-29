@@ -47,9 +47,9 @@ Built-in Unity API calls are used to grab per frame images from a front-facing c
 
 Taking inspiration from Dean A. Pomerleau's work on IRRE ("_Input Reconstruction Reliability Estimation_") for determining the response reliability of a restricted class of multi-layer perceptrons, a confidence metric is determined from the hierarchy predictions. This metric is shown as a NCC percentage value and plotted to a central graph.
 
-The NCC value is used, *after the first lap*, to detemine whether to only use steering predictions (**NCC >85%**), or whether to continue/revert to training (**NCC <15%**). During the first few laps training and prediction is expected to fluctuate. This actually helps the predictive hierarchy to discover more information about the driving around the track, and produces more accurate, confident, and consistent predictions for steering values.
+The NCC value is used, *after the first lap*, to determine whether to only use steering predictions (**NCC >85%**), or whether to continue/revert to training (**NCC <15%**). During the first few laps training and prediction is expected to fluctuate. This actually helps the predictive hierarchy to discover more information about the driving around the track, and produces more accurate, confident, and consistent predictions for steering values.
 
-If the car's speed drops below 2.0 units the training mode is also re-enabled. This typically occurs when high frequency steering fluctations occur.
+If the car's speed drops below 2.0 units the training mode is also re-enabled. This typically occurs when high frequency steering fluctuations occur.
 
 During the first handful of laps it is expected that during prediction mode the car can drift towards a barrier. Therefore training is re-enabled if the car comes too close to the barrier.
 
@@ -61,7 +61,7 @@ Similar pre-processing (pre-encoding) takes place before information is sent int
 
 A central part of the camera image is extracted and converted from RGB to Y'uv space. This is then passed into a C++ and OpenCV based pre-encoder within the EOgmaNeo library.
 
-An OpenCV [Line Segement Detector](http://www.ipol.im/pub/art/2012/gjmr-lsd/) detects certain length lines, that are then 'chunked' into a sparse representation (SDR). This representation is drawn below the right hand half-height image (with lines detected superimposed), and below that is drawn the predicted representation from the hierarchy.
+An OpenCV [Line Segment Detector](http://www.ipol.im/pub/art/2012/gjmr-lsd/) detects certain length lines, that are then 'chunked' into a sparse representation (SDR). This representation is drawn below the right hand half-height image (with lines detected superimposed), and below that is drawn the predicted representation from the hierarchy.
 
 Different combinations and forms of filtering, thresholding, and feature detection have been explored before settling on the LSD detector and sparse chunked representation.
 
@@ -69,9 +69,9 @@ A history buffer of the input and predicted representations are collected over a
 
 #### OgmaNeo car controller
 
-The camera image is converted from RGB space into Y'uv space, before the luminance (Y channel) is passed through a Sobel edge detection filter. This filtered version is then passed into an OgmaNeo predictive hiearchy (formed from distance and chunk encoders/decoders), along with the current steering value.
+The camera image is converted from RGB space into Y'uv space, before the luminance (Y channel) is passed through a Sobel edge detection filter. This filtered version is then passed into an OgmaNeo predictive hierarchy (formed from distance and chunk encoders/decoders), along with the current steering value.
 
-Unlike the EOgmaNeo predictive hiearchy, the OgmaNeo hierarchy is capable of predicting not just the next steering value but also the next camera image. This predicted camera image output is used to form the NCC value (normalized cross correlation percentage), and hence determine whether the hierarchy is confident in it's predictions and should be in predicted driving mode. Or less confident and should be in training mode.
+Unlike the EOgmaNeo predictive hierarchy, the OgmaNeo hierarchy is capable of predicting not just the next steering value but also the next camera image. This predicted camera image output is used to form the NCC value (normalized cross correlation percentage), and hence determine whether the hierarchy is confident in it's predictions and should be in predicted driving mode. Or less confident and should be in training mode.
 
 ### Screen overlays
 
@@ -94,11 +94,11 @@ Both implementations allow for hierarchy state to be saved out and reloaded back
 
 To reload a saved hierarchy, a check box in the EOgmaNeoCarController or OgmaNeoCarController game object inspector panel can be enabled to perform a reload upon commencement of a new simulator run.
 
-A text box contains the filename used for saving/reloading a hierachy.
+A text box contains the filename used for saving/reloading a hierarchy.
 
 ### NeoVis hierarchy visualisation
 
-The [EOgmaNeo](https://github.com/ogmacorp/EOgmaNeo/) library contains an SFML (and ImGui) visualization tool called [NeoVis](https://github.com/ogmacorp/NeoVis/). In the EOgmaNeoCarController script and game object a checkbox (boolean) can be enabled that will start the NeoVis client code. This introduces a slight delay when the Unity EOgmaNeo scene is running, until the NeoVis appplication has connected to the EOgmaNeo car controller script. The NeoVis application is a great way of discovering what is happening within an EOgmaNeo hierarchy when the simulation is running.
+The [EOgmaNeo](https://github.com/ogmacorp/EOgmaNeo/) library contains an SFML (and ImGui) visualization tool called [NeoVis](https://github.com/ogmacorp/NeoVis/). In the EOgmaNeoCarController script and game object a checkbox (boolean) can be enabled that will start the NeoVis client code. This introduces a slight delay when the Unity EOgmaNeo scene is running, until the NeoVis application has connected to the EOgmaNeo car controller script. The NeoVis application is a great way of discovering what is happening within an EOgmaNeo hierarchy when the simulation is running.
 
 For NeoVis to connect to the EOgmaNeo client-side code, the EOgmaNeo Unity scene needs to be started first (hitting the play button in Unity). Then the NeoVis `Connection Wizard` can be used to `Connect!` to the EOgmaNeo car controller script.
 
