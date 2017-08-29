@@ -1,3 +1,9 @@
+1.1.1 August, 2017
+==================
+
+- Addition of Tutorial.md file
+
+
 1.1 July, 2017
 ==============
 

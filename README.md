@@ -28,7 +28,7 @@ The [EOgmaNeo](https://github.com/ogmacorp/EOgmaNeo/) version has been optimized
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=0ibVhtuQkZA
 " target="_blank"><img src="http://img.youtube.com/vi/0ibVhtuQkZA/0.jpg" 
-alt="Self Driving Car Learns Online and On-board on Raspberry Pi 3" width="480" height="360" border="1"/></a>
+alt="Self Driving Car Learns Online and On-board on Raspberry Pi 3" width="480" height="360" border="1"/></a><div>https://www.youtube.com/watch?v=0ibVhtuQkZA
 
 A third Unity scene, `Assets/OgmaDrive.unity`, is used as a main menu to allow a choice of implementation when packaged and used with a Unity player as a standalone application. The standalone pre-built version of OgmaDrive for Windows and Mac OSX can be downloaded from this [Github repo](https://github.com/ogmacorp/OgmaDriveApp/releases).
 
@@ -38,8 +38,8 @@ C# car controller scripts can be found in the `Assets/Scripts/` directory, calle
 
 Unity C# scripts are used to edit and define a closed-loop spline that procedurally generates a track and barriers.
 
-* When in training mode this central track spline is used to determine appropriate steering values to allow the car to follow the spline.
-* When in prediction mode the resulting predicted steering value from the hierarchy is used to steer the car autonomously.
+- When in training mode this central track spline is used to determine appropriate steering values to allow the car to follow the spline.
+- When in prediction mode the resulting predicted steering value from the hierarchy is used to steer the car autonomously.
 
 Built-in Unity API calls are used to grab per frame images from a front-facing camera attached to the car. Pre-encoding then takes place to process and prepare the current steering angle and this camera image before deliver to the predictive hierarchy.
 
@@ -78,15 +78,15 @@ Unlike the EOgmaNeo predictive hiearchy, the OgmaNeo hierarchy is capable of pre
 Both implementations provide overlays containing pertinent information:
 
 - Left:
-  * Pre-filtered front-facing camera image
-  * Graph of Training % vs. Prediction % (per lap)
+  - Pre-filtered front-facing camera image
+  - Graph of Training % vs. Prediction % (per lap)
 - Middle:
-  * General information, including current mode
-  * Confidence graph (**>85%** toggles prediction only, **<15%** reverts back to training)
+  - General information, including current mode
+  - Confidence graph (**>85%** toggles prediction only driving, **<15%** reverts back to training)
 - Right:
-  * **OgmaNeo:** Predicted hierarchy output image
-  * **EOgmaNeo:** Pre-encoder SDR vs. predicted SDR
-  * Graph of predicted steering value
+  - For **OgmaNeo:** Predicted hierarchy output image
+  - For **EOgmaNeo:** Detected line segments, and Pre-encoder SDR vs. predicted SDR
+  - Graph of predicted steering value
 
 ### Hierarchy serialization
 
@@ -102,6 +102,14 @@ The [EOgmaNeo](https://github.com/ogmacorp/EOgmaNeo/) library contains an SFML (
 
 For NeoVis to connect to the EOgmaNeo client-side code, the EOgmaNeo Unity scene needs to be started first (hitting the play button in Unity). Then the NeoVis `Connection Wizard` can be used to `Connect!` to the EOgmaNeo car controller script.
 
+## Tutorial
+
+For a more detailed description of how OgmaDrive works within Unity and interacts with OgmaNeo and EOgmaNeo libraries, see the [TUTORIAL.md](TUTORIAL.md) files. The following video show the EOgmaNeo version running inside Unity:
+
+**Note:** Closed captions / subtitles provide an explanation during the following video. 
+
+<a href="https://www.youtube.com/embed/MpzHAjeRFhU?cc_load_policy=1" target="_blank"><img src="http://img.youtube.com/vi/MpzHAjeRFhU/0.jpg" alt="OgmaDrive (EOgmaNeo version)" width="480" height="360" border="1"/></a><div>https://www.youtube.com/watch?v=MpzHAjeRFhU?cc_load_policy=1
+
 ## Contributions
 
 Refer to the [CONTRIBUTING.md](https://github.com/ogmacorp/OgmaDrive/blob/master/CONTRIBUTING.md) file for information on making contributions to OgmaDrive.
@@ -114,6 +122,6 @@ Contact Ogma via licenses@ogmacorp.com to discuss commercial use and licensing o
 
 The OgmaNeo library uses the Google [FlatBuffers](http://google.github.io/flatbuffers/) package that is licensed with an Apache License (Version 2.0). Refer to this [LICENSE.txt](https://github.com/google/flatbuffers/blob/master/LICENSE.txt) file for the full licensing text associated with the FlatBuffers package.
 
-Jasper Flick's [Catlike Coding](http://catlikecoding.com/unity/tutorials/) Unity C# scripts are used for handline spline creation and manipulation.
+Jasper Flick's [Catlike Coding](http://catlikecoding.com/unity/tutorials/) Unity C# scripts are used for handling spline creation and manipulation.
 
 OgmaDrive Copyright (c) 2016 [Ogma Intelligent Systems Corp](https://ogmacorp.com). All rights reserved.
